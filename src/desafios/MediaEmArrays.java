@@ -3,52 +3,45 @@ package desafios;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MediaEmArrays {
+public class MediaEmArrays extends RecebeQuantidades{
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		RecebeQuantidades recebe = new RecebeQuantidades();
 
 		int escolha;
-		int alunos = 0;
-		int notas = 0;
 		double total = 0;
 		double media = 0;
 
 		do {
-			alunos = alunos;
-			notas = notas;
-			double[][] notasDaTurma = new double[alunos][notas];
+			double[][] notasDaTurma = new double[recebe.alunos][recebe.notas];
 			menuInicial();
+
 			escolha = scanner.nextInt();
 			switch (escolha) {
 			case 1:
 				// operação para receber a quantidade de alunos e de notas
 				System.out.println("Informe a Quantidade de Alunos:");
-				alunos = scanner.nextInt();
-
+				recebe.alunos = scanner.nextInt();
 				System.out.println("Informe a Quantidade de notas:");
-				notas = scanner.nextInt();
-
+				recebe.notas = scanner.nextInt();
+				// recebeDados(recebe);
 				break;
 			case 2:
 				// operação para receber as notas
 				for (int a = 0; a < notasDaTurma.length; a++) {
 					for (int n = 0; n < notasDaTurma[a].length; n++) {
-
 						System.out.printf("Informe a nota %d do aluno %d:", (n + 1), (a + 1));
 						notasDaTurma[a][n] = scanner.nextDouble();
-				
-					}
+					}	
 				}
-				
 				break;
 			case 3:
 				break;
 			case 4:
 				// operação para mostrar as notas da turma
-				//for(double[]nota: notasDaTurma) {
-				//	System.out.println(Arrays.toString(notasDaTurma));
-					
-				//}
+				for (double[] nota : notasDaTurma) {
+					System.out.println(Arrays.toString(notasDaTurma));
+				}
 				break;
 			case 5:
 				// sair do programa
@@ -69,7 +62,5 @@ public class MediaEmArrays {
 		System.out.println("4 - Mostrar as notas da Turma ");
 		System.out.println("5 - Sair ");
 	}
-	
-	
 
 }
