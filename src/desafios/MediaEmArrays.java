@@ -15,7 +15,6 @@ public class MediaEmArrays extends RecebeQuantidades{
 		do {
 			double[][] notasDaTurma = new double[recebe.alunos][recebe.notas];
 			menuInicial();
-
 			escolha = scanner.nextInt();
 			switch (escolha) {
 			case 1:
@@ -25,6 +24,7 @@ public class MediaEmArrays extends RecebeQuantidades{
 				System.out.println("Informe a Quantidade de notas:");
 				recebe.notas = scanner.nextInt();
 				// recebeDados(recebe);
+				
 				break;
 			case 2:
 				// operação para receber as notas
